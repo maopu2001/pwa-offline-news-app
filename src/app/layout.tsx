@@ -4,11 +4,10 @@ import { Toaster } from 'sonner';
 
 export const metadata: Metadata = {
   title: 'News Reader',
-  description: 'PWA Offline News Reader',
-  generator: 'Next.js',
+  description: 'This app is made by M. Aktaruzzaman Opu',
   manifest: '/manifest.json',
   keywords: ['PWA', 'Offline', 'News Reader'],
-  authors: [{ name: 'M. Aktaruzzaman Opu', url: 'https://maopu2001.github.io' }],
+  authors: [{ name: 'M. Aktaruzzaman Opu', url: 'https://maopu.vercel.app' }],
   icons: [
     { rel: 'icon', url: 'icons/app-512.png' },
     { rel: 'apple-touch-icon', url: 'icons/app-512.png' },
@@ -23,7 +22,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <meta name="theme-color" content="#ffffff" />
         <link rel="manifest" href="/manifest.json" />
         <link rel="icon" href="icons/app-512.png" />
         <link rel="apple-touch-icon" href="icons/app-512.png" />

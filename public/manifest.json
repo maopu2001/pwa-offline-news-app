@@ -1,13 +1,11 @@
 {
   "name": "PWA Offline News Reader",
   "short_name": "News Reader",
-  "theme_color": "#00ff00",
-  "background_color": "#ffffff",
+  "description": "This app is made by M. Aktaruzzaman Opu",
   "display": "standalone",
   "orientation": "natural",
   "scope": "/",
   "start_url": "/",
-  "id": "/",
   "icons": [
     { "src": "icons/app-16.png", "type": "image/png", "sizes": "16x16" },
     { "src": "icons/app-48.png", "type": "image/png", "sizes": "48x48" },

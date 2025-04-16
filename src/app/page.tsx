@@ -9,7 +9,7 @@ export default function Home() {
     <Tabs defaultValue="headlines" className="w-full gap-0">
       <div className="bg-background w-full h-15 flex justify-center items-center sticky top-0 z-50">
         <CheckConnection />
-        <TabsList className="max-w-8/10 w-150">
+        <TabsList className="max-w-7/10 w-150 *:cursor-pointer">
           <TabsTrigger className="font-bold" value="headlines">
             Headlines
           </TabsTrigger>
