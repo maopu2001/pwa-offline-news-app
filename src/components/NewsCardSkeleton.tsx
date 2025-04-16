@@ -1,5 +1,3 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/card';
-import { News } from '@/types/News';
 import { Skeleton } from './ui/skeleton';
 
 export const NewsCardSkeleton = () => {

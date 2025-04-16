@@ -118,3 +118,17 @@
     @apply bg-background text-foreground;
   }
 }
+
+#moon,
+#sun {
+  animation: rotating 1s ease-in-out;
+}
+
+@keyframes rotating {
+  from {
+    transform: rotate(180deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

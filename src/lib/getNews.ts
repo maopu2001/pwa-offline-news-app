@@ -1,6 +1,5 @@
 'use server';
 import axios from 'axios';
-import { toast } from 'sonner';
 
 type Params = {
   [key: string]: string;

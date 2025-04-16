@@ -2,18 +2,35 @@
 import { News } from '@/types/News';
 import { getNews } from '@/lib/getNews';
 import { NewsOverlay } from '@/components/NewsCard';
-import { useQuery } from 'react-query';
 import { NewsCardSkeleton } from '@/components/NewsCardSkeleton';
 import { toast } from 'sonner';
-import { AxiosError } from 'axios';
+import { useEffect, useState } from 'react';
 
 export const TopHeadlinesTab = () => {
-  const { data: headlines, isLoading } = useQuery({
-    queryKey: ['headlines'],
-    queryFn: () => getNews('top-headlines', { country: 'us' }),
-    refetchInterval: 24 * 3600 * 1000, //1 day
-    onError: (err) => toast.error('Failed to fetch Top Headlines'),
-  });
+  const [headlines, setHeadlines] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+
+  useEffect(() => {
+    const fetchHeadlines = async () => {
+      setIsLoading(true);
+      try {
+        const headlines = await getNews('top-headlines', { country: 'us', pageSize: '30' });
+        setHeadlines(headlines);
+        localStorage.setItem('headlines', JSON.stringify(headlines));
+      } catch (error) {
+        const savedData = localStorage.getItem('headlines');
+        if (savedData) {
+          const headlines = JSON.parse(savedData as string);
+          setHeadlines(headlines);
+        } else {
+          toast.error('Failed to load Top Headlines');
+        }
+      } finally {
+        setIsLoading(false);
+      }
+    };
+    fetchHeadlines();
+  }, []);
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-[repeat(auto-fit,minmax(400px,1fr))] gap-4 px-4">
