@@ -1,25 +1,19 @@
-import type { NextConfig } from 'next';
-
 import withPWA from 'next-pwa';
 
-const nextConfig: NextConfig = {
+const isDev = process.env.NODE_ENV === 'development';
+
+const nextConfig = {
   images: {
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: '*',
-      },
-      {
-        protocol: 'http',
-        hostname: '*',
-      },
-    ],
+    unoptimized: true,
+  },
+  experimental: {
+    appDir: true,
   },
 };
 
 export default withPWA({
-  dest: 'public',
-  // disable: process.env.NODE_ENV === 'development',
-  register: true,
-  skipWaiting: true,
+  dest: 'public', // Important!
+  // disable: isDev, // Don't use in dev mode
+  register: true, // Enable auto registration
+  skipWaiting: true, // For immediate control
 })(nextConfig);
