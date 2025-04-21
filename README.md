@@ -2,6 +2,21 @@
 
 A Progressive Web App (PWA) that allows users to read news articles both online and offline. Built with Next.js, this application provides a seamless news reading experience with offline capabilities.
 
+## Academic Information
+
+### Team Name: Backend_Guardians
+
+- M. Aktaruzzaman Opu - 2001011002
+- Shahriar Jahan - 2001011020
+
+### Course Name
+
+#### Web Engineering Lab Course (CSE-3106)
+
+### Instructor
+
+#### Md. Mynoddin, Assistant Professor, Department of CSE, RMSTU
+
 ## Features
 
 - Offline-first architecture
