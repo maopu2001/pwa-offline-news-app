@@ -1,11 +1,12 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
-function useInternetStatus(pingUrl = 'https://httpstat.us/200', interval = 5000) {
+function useInternetStatus(url = 'https://httpstat.us/200', interval = 1000) {
   const [isOnline, setIsOnline] = useState(false);
 
   useEffect(() => {
     const checkInternet = async () => {
+      const pingUrl = url + '?q=' + Math.random() * 1000000;
       try {
         await axios.get(pingUrl);
         setIsOnline(true);
@@ -18,8 +19,9 @@ function useInternetStatus(pingUrl = 'https://httpstat.us/200', interval = 5000)
     const id = setInterval(checkInternet, interval);
 
     return () => clearInterval(id);
-  }, [pingUrl, interval]);
+  }, [url, interval]);
 
+  console.log(isOnline);
   return isOnline;
 }
 
