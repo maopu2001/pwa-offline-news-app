@@ -27,7 +27,7 @@ A Progressive Web App (PWA) that allows users to read news articles both online 
 
 ## Tech Stack
 
-- Next.js 14
+- Next.js 15
 - TypeScript
 - React
 - PWA Service Worker
